@@ -33,6 +33,7 @@ It uses **encryption techniques** to protect sensitive data and ensures that pas
 * **Programming Language:** Python
 * **Database:** SQLite (sqlite3)
 * **Libraries:**
+
   * Cryptography (Fernet)
 
 ---
@@ -40,41 +41,47 @@ It uses **encryption techniques** to protect sensitive data and ensures that pas
 ## 📦 Requirements
 
 Install the following dependencies:
-cryptography
 
+```
+cryptography
+```
 
 👉 Install using:
 
+```
 pip install -r requirements.txt
-
+```
 
 ---
 
 ## 📂 Project Structure
 
-
-secure_password_vault/
+```
+SECURE_PASSWORD_VAULT/
 │
-├── main.py
-├── database.db
-├── key.key
-├── requirements.txt
-└── README.md
-
+├── key_generator.py     # Generates encryption key
+├── secret.key           # Stores encryption key
+├── vault.db             # SQLite database file
+├── vault.py             # Main application file
+└── .gitignore           # Ignored files
+```
 
 ---
 
 ## ⚙️ How It Works
 
-1. User runs the application
-2. Menu options are displayed:
-   * Add credential
+1. Run the application using Python
+2. The system provides options to:
+
+   * Add credentials
    * View credentials
-   * Delete credential
-3. When storing data:
+   * Delete credentials
+3. When adding data:
+
    * Password is encrypted using Fernet
-4. Data is saved in SQLite database
-5. While viewing:
+4. Data is stored in SQLite database
+5. When viewing data:
+
    * Password is decrypted and displayed
 
 ---
@@ -85,42 +92,55 @@ secure_password_vault/
 
 ```bash
 git clone https://github.com/mabitha-7/secure-password-vault.git
-cd secure_password_vault
-2️⃣ Install Dependencies
+cd SECURE_PASSWORD_VAULT
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3️⃣ Run the Project
-python main.py
-💡 Example Usage
+```
 
-Add credential → Enter website, username, password
+### 3️⃣ Run the Project
 
-View credentials → Displays decrypted data
+```bash
+python vault.py
+```
 
-Delete → Enter ID to remove data
+---
 
-🔒 Security
+## 💡 Example Usage
 
-Passwords are encrypted using Fernet symmetric encryption
+* Add credential → Enter website, username, password
+* View credentials → Displays decrypted data
+* Delete → Enter ID to remove data
 
-No plain-text password storage
+---
 
-Encryption key stored separately
+## 🔒 Security
 
-🔮 Future Enhancements
+* Passwords are encrypted using **Fernet symmetric encryption**
+* No plain-text password storage
+* Encryption key stored separately
 
-🖥️ GUI-based interface
+---
 
-🔑 Master password authentication
+## 🔮 Future Enhancements
 
-☁️ Cloud backup support
+* 🖥️ GUI-based interface
+* 🔑 Master password authentication
+* ☁️ Cloud backup support
+* 📱 Mobile application
 
-📱 Mobile application
+---
 
-👩‍💻 Author
+## 👩‍💻 Author
 
-Mabitha M
+**Mabitha M**
 B.Tech (AI & ML) Student
 
-📜 License
+---
+
+## 📜 License
 
 This project is for educational purposes only.
